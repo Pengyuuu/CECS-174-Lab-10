@@ -50,7 +50,7 @@ def main():
         if x == True:
             print('Winner!')
             break
-        if current == 1:
+        if current % 2 == 1:
             print("X's turn")
         else:
             print("O's turn")
@@ -65,16 +65,21 @@ def main():
 
         #switch players
         board[r][c] = current
+
+        current = 2 if current == 1 else 1
+
+        '''
         if current == 1:
             current = 2
         else:
             current = 1
+        '''
     #winner or tie game
     if x == False:
         print('Tie game')
-    elif current == 1:
+    elif current % 2 == 1:
         print('O wins!')
-    elif current == 2:
+    elif current % 2 == 2:
         print('X wins!')
 
 
